@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import CounterApp from '../screen/CounterApp'
-import CounterDisplay from '../screen/CounterDisplay'
+import CounterApp from '../component/CounterApp'
+import CounterDisplay from '../component/CounterDisplay'
 import { createStackNavigator, createAppContainer, createMaterialTopTabNavigator, } from 'react-navigation'
 import { Provider } from 'react-redux'
 
@@ -28,4 +28,8 @@ class MainScreen extends Component {
     }
 }
 
-export default AppContainer;
+// const mapStateToProps = state => ({
+//     navigation: state.Navigator,
+//   })
+
+export default AppContainer ;

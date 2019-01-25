@@ -1,23 +1,14 @@
-import { combineReducers } from 'redux'
-
-const initialState = {
-    counter: 0
-};
-
-
-function reducer(state = initialState, action) {
-    console.log('error-',state,action)
-    switch (action.type) {
-        case 'INCREASE_COUNTER':
-            return { counter: (state.counter + 1) }
-        case 'DECREASE_COUNTER':
-            return { counter: (state.counter - 1) }
-    }
-    return state
-}
+import { combineReducers, createStore } from 'redux'
+import CounterUpdate from './CounterUpdate'
 
 const rootReducer = combineReducers({
-    reducer
+    CounterUpdate,
 });
 
-export default rootReducer;
+const reducer=(state, action) => {
+    return rootReducer(state, action);
+}
+
+let store = createStore(reducer)
+
+export default store;
