@@ -32,4 +32,4 @@ class MainScreen extends Component {
 //     navigation: state.Navigator,
 //   })
 
-export default AppContainer ;
+export default AppContainer;

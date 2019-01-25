@@ -1,55 +1,49 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
-import { connect } from 'react-redux'
+import { withNavigation } from 'react-navigation'
 
 
-class CounterDisplay extends Component {
+export default class CounterDisplay extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
 
         }
+        // this.buttonPress = this.buttonPress.bind(this);
         console.log('----------here----------', props, this.props);
+    }
+
+    buttonPress() {
+        console.log('called');
+        this.props.navigation.navigate('CounterApp');
     }
     render() {
         const { container, text, counterView, buttonView } = styles
+
         return (
             <View style={container}>
                 <Text style={text}>This is Page 2</Text>
                 <View style={counterView}>
-                    <TouchableOpacity onPress={() => this.props.increaseCounter()}>
+                    <TouchableOpacity onPress={this.props.increaseCounter}>
                         <Text style={text}>Increase</Text>
                     </TouchableOpacity>
                     <Text style={text}>{this.props.counter}</Text>
-                    <TouchableOpacity onPress={() => this.props.decreaseCounter()}>
+                    <TouchableOpacity onPress={this.props.decreaseCounter}>
                         <Text style={text}>Decrease</Text>
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity
-                    style={{ padding: 10, margin: 10, backgroundColor: 'red', width: '90%' }}
-                    onPress={() => this.props.navigation.navigate('CounterApp')}
+                    style={{ padding: 10, margin: 10, backgroundColor: 'red', width: '90%', alignItems: 'center' }}
+                    onPress={this.buttonPress}
                 >
-                    <Text style={text}>Back</Text>
+                    <Text style={text}>Next</Text>
                 </TouchableOpacity>
             </View>
         );
     }
 }
 
-function mapStateToProps(state) {
-    console.log('mapStateToProps--------', state);
 
-    return {
-        counter: state.reducer.counter
-    }
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        increaseCounter: () => dispatch({ type: 'INCREASE_COUNTER' }),
-        decreaseCounter: () => dispatch({ type: 'DECREASE_COUNTER' }),
-    }
-}
 
 const styles = StyleSheet.create({
     container: {
@@ -78,4 +72,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CounterDisplay)
+// export default withNavigation(CounterApp);
