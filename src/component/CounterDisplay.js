@@ -27,14 +27,14 @@ export default class CounterDisplay extends Component {
                     <TouchableOpacity onPress={this.props.increaseCounter}>
                         <Text style={text}>Increase</Text>
                     </TouchableOpacity>
-                    <Text style={text}>{this.props.counter}</Text>
+                    <Text style={text}>/{this.props.counter}/</Text>
                     <TouchableOpacity onPress={this.props.decreaseCounter}>
                         <Text style={text}>Decrease</Text>
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity
                     style={{ padding: 10, margin: 10, backgroundColor: 'red', width: '90%', alignItems: 'center' }}
-                    onPress={this.buttonPress}
+                    onPress={()=> this.props.navigation.navigate('CounterApp')}
                 >
                     <Text style={text}>Next</Text>
                 </TouchableOpacity>

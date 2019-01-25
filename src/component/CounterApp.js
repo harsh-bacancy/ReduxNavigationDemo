@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { withNavigation } from 'react-navigation'
-import {} from 're'
+
 
 export default class CounterApp extends Component {
     constructor(props) {
@@ -13,10 +13,10 @@ export default class CounterApp extends Component {
         console.log('----------here----------', props, this.props);
     }
 
-    buttonPress() {
-        console.log('called');
-        this.props.navigation.navigate('CounterDisplay');
-    }
+    // buttonPress() {
+    //     console.log('called');
+    //     this.props.navigation.navigate('CounterDisplay');
+    // }
     render() {
         const { container, text, counterView, buttonView } = styles
 
@@ -24,11 +24,11 @@ export default class CounterApp extends Component {
             <View style={container}>
                 <Text style={text}>This is Page 1</Text>
                 <View style={counterView}>
-                    <TouchableOpacity onPress={this.props.increaseCounter}>
+                    <TouchableOpacity onPress={()=> this.props.increaseCounter()}>
                         <Text style={text}>Increase</Text>
                     </TouchableOpacity>
-                    <Text style={text}>{this.props.counter}</Text>
-                    <TouchableOpacity onPress={this.props.decreaseCounter}>
+                    <Text style={text}>*{this.props.counter}*</Text>
+                    <TouchableOpacity onPress={()=> this.props.decreaseCounter()}>
                         <Text style={text}>Decrease</Text>
                     </TouchableOpacity>
                 </View>
