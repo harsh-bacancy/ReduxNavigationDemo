@@ -27,7 +27,7 @@ export default class CounterApp extends Component {
                     <TouchableOpacity onPress={()=> this.props.increaseCounter()}>
                         <Text style={text}>Increase</Text>
                     </TouchableOpacity>
-                    <Text style={text}>*{this.props.counter}*</Text>
+                    <Text style={text}>({this.props.counter})</Text>
                     <TouchableOpacity onPress={()=> this.props.decreaseCounter()}>
                         <Text style={text}>Decrease</Text>
                     </TouchableOpacity>

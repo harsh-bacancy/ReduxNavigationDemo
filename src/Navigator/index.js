@@ -1,7 +1,7 @@
 import { createAppContainer, createStackNavigator, } from 'react-navigation'
 import React, { Component } from 'react'
-import CounterApp from '../component/CounterApp'
-import CounterDisplay from '../component/CounterDisplay'
+import CounterApp from '../actions/CounterAction'
+import CounterDisplay from '../actions/CounterAction2'
 
 const Navigator = createStackNavigator(
     {
@@ -13,14 +13,4 @@ const Navigator = createStackNavigator(
     }
 );
 
-const AppContainer = createAppContainer(Navigator)
-
-class AppNavigator extends Component {
-    render() {
-        return (
-            <Navigator />
-        )
-    }
-}
-
-export default AppContainer;
+export default createAppContainer(Navigator)

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import * as Action from './ActionTypes'
 // import AppContainer from '../Navigator'
-import CounterApp from '../component/CounterApp'
+import CounterDisplay from '../component/CounterDisplay'
 
 const mapStateToProps = (state) => ({
     counter: state.CounterUpdate.counter
@@ -12,4 +12,4 @@ const mapDispatchToProps = (dispatch) => ({
     decreaseCounter: () => dispatch({ type: Action.COUNTER_DECREMENT }),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CounterApp);
+export default connect(mapStateToProps, mapDispatchToProps)(CounterDisplay);

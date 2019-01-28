@@ -24,11 +24,11 @@ export default class CounterDisplay extends Component {
             <View style={container}>
                 <Text style={text}>This is Page 2</Text>
                 <View style={counterView}>
-                    <TouchableOpacity onPress={this.props.increaseCounter}>
+                    <TouchableOpacity onPress={()=> this.props.increaseCounter()}>
                         <Text style={text}>Increase</Text>
                     </TouchableOpacity>
-                    <Text style={text}>/{this.props.counter}/</Text>
-                    <TouchableOpacity onPress={this.props.decreaseCounter}>
+                    <Text style={text}>({this.props.counter})</Text>
+                    <TouchableOpacity onPress={()=> this.props.decreaseCounter()}>
                         <Text style={text}>Decrease</Text>
                     </TouchableOpacity>
                 </View>
