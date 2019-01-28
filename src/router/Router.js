@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 
 import store from '../store'
 
-const Navigator = createStackNavigator(
+const Navigator = createMaterialTopTabNavigator(
     {
         CounterApp: { screen: CounterApp },
         CounterDisplay: { screen: CounterDisplay },

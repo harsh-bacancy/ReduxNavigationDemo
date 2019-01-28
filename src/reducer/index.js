@@ -2,7 +2,6 @@ import { combineReducers, createStore, applyMiddleware } from 'redux'
 import CounterUpdate from './CounterUpdate'
 import thunk from 'redux-thunk';
 
-
 const rootReducer = combineReducers({
     CounterUpdate,
 });

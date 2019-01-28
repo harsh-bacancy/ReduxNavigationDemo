@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
 import * as Action from './ActionTypes'
-// import AppContainer from '../Navigator'
 import CounterApp from '../component/CounterApp'
 
 const mapStateToProps = (state) => ({

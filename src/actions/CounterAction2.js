@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
 import * as Action from './ActionTypes'
-// import AppContainer from '../Navigator'
 import CounterDisplay from '../component/CounterDisplay'
 
 const mapStateToProps = (state) => ({

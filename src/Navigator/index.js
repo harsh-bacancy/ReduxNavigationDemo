@@ -1,5 +1,4 @@
 import { createAppContainer, createStackNavigator, } from 'react-navigation'
-import React, { Component } from 'react'
 import CounterApp from '../actions/CounterAction'
 import CounterDisplay from '../actions/CounterAction2'
 

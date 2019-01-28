@@ -1,22 +1,14 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
-import { withNavigation } from 'react-navigation'
-
 
 export default class CounterApp extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
         }
-        // this.buttonPress = this.buttonPress.bind(this);
         console.log('----------here----------', props, this.props);
     }
 
-    // buttonPress() {
-    //     console.log('called');
-    //     this.props.navigation.navigate('CounterDisplay');
-    // }
     render() {
         const { container, text, counterView, buttonView } = styles
 
@@ -42,8 +34,6 @@ export default class CounterApp extends Component {
         );
     }
 }
-
-
 
 const styles = StyleSheet.create({
     container: {
@@ -71,5 +61,3 @@ const styles = StyleSheet.create({
         color: '#000'
     },
 });
-
-// export default withNavigation(CounterApp);
