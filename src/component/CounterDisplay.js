@@ -28,7 +28,7 @@ export default class CounterDisplay extends Component {
                     style={{ padding: 10, margin: 10, backgroundColor: 'red', width: '90%', alignItems: 'center' }}
                     onPress={()=> this.props.navigation.navigate('CounterApp')}
                 >
-                    <Text style={text}>Next</Text>
+                    <Text style={text}>Prev</Text>
                 </TouchableOpacity>
             </View>
         );
