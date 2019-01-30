@@ -11,11 +11,20 @@ export default class CounterApp extends Component {
         console.log('----------here----------', props, this.props);
     }
     onChangeText(number) {
-        const count = parseInt(number);
-        this.props.counterSet(count);
+        // const { counter } = this.props
+        console.log('Type Of up', typeof (number))
+        const count = parseInt(number)
+        // console.log('Type Of coup', typeof (counter), counter, count)
+        if (isNaN(count)) {
+            this.props.counterSet('');
+        } else {
+            this.props.counterSet(count);
+        }
     }
     render() {
         const { container, text, counterView, } = styles
+        const { counter } = this.props
+        console.log('Type Of', typeof (counter))
         return (
             <View style={container}>
                 <Text style={text}>This is Page 1</Text>
@@ -23,7 +32,7 @@ export default class CounterApp extends Component {
                     placeholder='0'
                     style={{ width: 100, height: 40, borderWidth: 2 }}
                     onChangeText={this.onChangeText}
-                    value={this.props.counter.toString()}
+                    value={counter + ''}
                 ></TextInput>
                 <View style={counterView}>
                     <TouchableOpacity onPress={() => this.props.increaseCounter()}>
