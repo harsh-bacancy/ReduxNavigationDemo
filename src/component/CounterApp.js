@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet,  } from 'react-native'
 import { TextInput } from 'react-native-gesture-handler';
+
 
 export default class CounterApp extends Component {
     constructor(props) {
@@ -30,6 +31,7 @@ export default class CounterApp extends Component {
                 <Text style={text}>This is Page 1</Text>
                 <TextInput
                     placeholder='0'
+                    keyboardType='number-pad'
                     style={{ width: 100, height: 40, borderWidth: 2 }}
                     onChangeText={this.onChangeText}
                     value={counter + ''}
@@ -47,7 +49,7 @@ export default class CounterApp extends Component {
                     style={{ padding: 10, margin: 10, backgroundColor: 'red', width: '90%', alignItems: 'center' }}
                     onPress={() => this.props.clearCounter()}
                 >
-                    <Text>
+                    <Text style={text}>
                         Clear
                     </Text>
                 </TouchableOpacity>
